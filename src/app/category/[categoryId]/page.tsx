@@ -24,13 +24,13 @@ const categoryNews = async ({params}: { params: { categoryId: string }}) => {
             <div className="grid grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-3">
                 {categoryNews.map((news) => (
                     <Link key={news.id} href={`/news/${news.id}`} className="w-full min-w-0 max-w-md">
-                        <div className="card bg-base-100 w-full shadow-sm">
-                            <figure className="relative aspect-video w-full overflow-hidden">
+                        <div className="card w-full flex-row overflow-hidden bg-base-100 shadow-sm sm:flex-col">
+                            <figure className="relative aspect-[4/3] w-[36%] shrink-0 overflow-hidden sm:aspect-video sm:w-full">
                                 <Image src={news.imageUrl} alt={news.imageAlt || news.title} fill unoptimized className="object-cover" />
                             </figure>
-                            <div className="card-body min-w-0 p-4 sm:p-5">
-                                <h2 className="card-title break-words text-lg leading-snug sm:text-xl">{news.title}</h2>
-                                <p className="break-words text-sm leading-relaxed sm:text-base">{news.description}</p>
+                            <div className="card-body min-w-0 flex-1 gap-2 p-3 sm:p-5">
+                                <h2 className="card-title line-clamp-2 break-words text-sm leading-snug sm:text-xl">{news.title}</h2>
+                                <p className="line-clamp-3 break-words text-xs leading-relaxed sm:text-base">{news.description}</p>
                                 <div className="card-actions min-w-0 justify-end">
                                     <span className="max-w-full truncate text-xs text-neutral-500">{news.url}</span>
                                 </div>

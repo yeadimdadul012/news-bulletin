@@ -36,13 +36,8 @@ const MainNews = async () => {
         </div>
      
         
-        <div className="space-y-2 text-neutral-900">
-          <h2 className="break-words text-[clamp(1.25rem,3vw,1.6rem)] font-black leading-[1.1] tracking-[-0.03em] text-neutral-900">{firstNews.title}</h2>
-          <p className="break-words text-sm leading-6 text-neutral-700 sm:text-[0.9rem]">{firstNews.description}</p>
-        </div>
-
         <div className="overflow-hidden rounded-sm border border-neutral-200 bg-neutral-100">
-          <div className="aspect-video w-full overflow-hidden">
+          <div className="aspect-[4/3] w-full overflow-hidden sm:aspect-video">
             <Image
               src={firstNews.imageUrl}
               alt={firstNews.imageAlt || firstNews.title}
@@ -54,8 +49,11 @@ const MainNews = async () => {
             />
           </div>
         </div>
-       
 
+        <div className="space-y-2 text-neutral-900">
+          <h2 className="break-words text-[clamp(1.25rem,5vw,1.6rem)] font-black leading-[1.1] tracking-[-0.03em] text-neutral-900">{firstNews.title}</h2>
+          <p className="break-words text-sm leading-6 text-neutral-700 sm:text-[0.9rem]">{firstNews.description}</p>
+        </div>
 
         <div className="break-words text-[0.65rem] font-medium text-neutral-500 sm:text-[0.68rem]">{date}</div>
       </div>
